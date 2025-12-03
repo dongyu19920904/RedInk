@@ -3,7 +3,7 @@
     <div class="page-header">
       <div>
         <h1 class="page-title">创作完成</h1>
-        <p class="page-subtitle">恭喜！你的小红书图文已生成完毕，共 {{ store.images.length }} 张</p>
+        <p class="page-subtitle">恭喜！你的医学科普图文已生成完毕，共 {{ store.images.length }} 张</p>
       </div>
       <div style="display: flex; gap: 12px;">
         <button class="btn" @click="startOver" style="background: white; border: 1px solid var(--border-color);">
@@ -65,6 +65,23 @@
         </div>
       </div>
     </div>
+
+    <!-- 免责声明 -->
+    <div class="disclaimer-card">
+      <div class="disclaimer-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+      </div>
+      <div class="disclaimer-content">
+        <div class="disclaimer-title">免责声明</div>
+        <div class="disclaimer-text">
+          本内容由 AI 自动生成，仅供科普学习参考，不作为医疗诊断、治疗或用药依据。如有健康问题，请咨询专业医疗机构或医生。
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -81,6 +98,48 @@
 }
 .image-card:hover img {
   transform: scale(1.05);
+}
+
+/* 免责声明样式 */
+.disclaimer-card {
+  margin-top: 24px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, #E3F2FD 0%, #F3E5F5 100%);
+  border-radius: var(--radius-md);
+  border: 1px solid #BBDEFB;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.disclaimer-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15);
+}
+
+.disclaimer-content {
+  flex: 1;
+}
+
+.disclaimer-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1565C0;
+  margin-bottom: 4px;
+}
+
+.disclaimer-text {
+  font-size: 13px;
+  color: #546E7A;
+  line-height: 1.6;
 }
 </style>
 

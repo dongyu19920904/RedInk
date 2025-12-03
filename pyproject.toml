@@ -1,7 +1,7 @@
 [project]
-name = "xiaohongshu-generator"
+name = "medink-generator"
 version = "0.1.0"
-description = "小红书图文生成器"
+description = "医墨 - AI医学科普图文生成器"
 requires-python = ">=3.11"
 dependencies = [
     "flask>=3.0.0",

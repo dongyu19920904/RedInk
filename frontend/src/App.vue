@@ -3,8 +3,8 @@
     <!-- 侧边栏 Sidebar -->
     <aside class="layout-sidebar">
       <div class="logo-area">
-        <img src="/logo.png" alt="红墨" class="logo-icon" />
-        <span class="logo-text">红墨</span>
+        <img src="/logo.png" alt="医墨" class="logo-icon" />
+        <span class="logo-text">医墨</span>
       </div>
       
       <nav class="nav-menu">

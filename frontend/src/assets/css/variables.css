@@ -1,14 +1,14 @@
 :root {
-  /* 配色方案 - 现代简约风格 */
+  /* 配色方案 - 医学科普专业风格 */
   --bg-body: #F4F5F7;
   --bg-sidebar: #FFFFFF;
   --bg-card: #FFFFFF;
   
-  --primary: #FF2442; /* 小红书红 */
-  --primary-hover: #FF4D6A;
-  --primary-active: #D91C36;
-  --primary-light: #FFF0F2;
-  --primary-fade: rgba(255, 36, 66, 0.08);
+  --primary: #2196F3; /* 医疗蓝 */
+  --primary-hover: #42A5F5;
+  --primary-active: #1976D2;
+  --primary-light: #E3F2FD;
+  --primary-fade: rgba(33, 150, 243, 0.08);
   
   --text-main: #333333;
   --text-sub: #666666;

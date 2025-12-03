@@ -13,7 +13,7 @@
         :value="modelValue"
         @input="handleInput"
         class="composer-textarea"
-        placeholder="输入主题，例如：秋季显白美甲..."
+        placeholder="输入医学主题，例如：高血压的预防与治疗、糖尿病饮食指南、胃镜检查注意事项..."
         @keydown.enter.prevent="handleEnter"
         :disabled="loading"
         rows="1"
