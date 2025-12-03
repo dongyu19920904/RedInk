@@ -6,53 +6,86 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Vue 3](https://img.shields.io/badge/vue-3.x-green.svg)](https://vuejs.org/)
 
-# 红墨 - 小红书AI图文生成器
+# 医墨 MedInk - AI医学科普图文生成器
 
-> 让传播不再需要门槛，让创作从未如此简单
+> 专业知识，轻松传播；健康科普，触手可及
 
 ![](images/index.gif)
 
 <p align="center">
-  <em>红墨首页</em>
+  <em>医墨首页 - 输入医学主题，一键生成专业科普长图</em>
 </p>
 
 <p align="center">
-  <img src="images/showcase-grid.png" alt="使用红墨生成的各类小红书封面" width="600"/>
+  <img src="images/showcase-grid.png" alt="使用医墨生成的医学科普图文" width="600"/>
 </p>
 
 <p align="center">
-  <em>使用红墨生成的各类小红书封面 - AI驱动，风格统一，文字准确</em>
+  <em>使用医墨生成的医学科普图文 - AI驱动，风格统一，专业可信</em>
 </p>
-
-
-
-## 写在前面
-
-前段时间默子在 Linux.do 发了一个用 Nano banana Pro 做 PPT 的帖子,收获了 600 多个赞。很多人用🍌Nano banana Pro 去做产品宣传图、直接生成漫画等等。我就在想:**为什么不拿🍌2来做点更功利、更刺激的事情?**
-
-于是就有了这个项目。一句话一张图片生成小红书图文
 
 ---
 
-## ✨ 效果展示
+## 🏥 项目简介
 
-### 输入一句话,就能生成完整的小红书图文
+**医墨（MedInk）** 是一款基于 AI 的医学科普图文生成工具，专为医学生、医护人员、健康科普创作者和医疗机构设计。
 
-#### 提示词：秋季显白美甲（暗广一个：默子牌美甲），图片 是我的小红书主页。符合我的风格生成
+**一句话生成一整套医学科普长图**——输入医学主题，AI 自动生成 6-12 页风格统一、排版精美的健康教育图文内容。
 
-#### 同时我还截图了我的小红书主页，包括我的头像，签名，背景，姓名什么的
+### 🎯 适用人群
+
+| 用户群体 | 使用场景 |
+|---------|---------|
+| 🎓 **医学生** | 制作考试复习笔记、知识点卡片、学习总结图 |
+| 🏥 **医院宣传科** | 制作公众号科普文章、健康教育海报、疾病防治宣传 |
+| 👨‍⚕️ **临床医生/护士** | 制作患者教育材料、术前术后指导、用药说明 |
+| 💪 **健康管理师** | 制作健康指导图卡、饮食运动建议、慢病管理方案 |
+| 📚 **医学教育机构** | 制作教学课件配图、知识点可视化、培训材料 |
+
+### ✨ 核心优势
+
+| 优势 | 说明 |
+|------|------|
+| ⚡ **效率提升 100x** | 从 2-4 小时手动制作 → 1-2 分钟 AI 生成 |
+| 🎨 **零设计门槛** | 不需要 PS/Canva 技能，输入文字即可出图 |
+| 🎯 **风格统一** | 全套长图自动保持一致的配色、排版、视觉风格 |
+| 🏥 **医学专业性** | Prompt 针对医学场景优化，内容结构符合医学逻辑 |
+| ✏️ **灵活可编辑** | 支持调整大纲、单页重绘、批量补全 |
+
+---
+
+## 📸 效果展示
+
+### 输入医学主题，就能生成完整的科普长图
+
+#### 示例主题：高血压的预防与治疗
+
+**第一步：输入主题**
+
+在首页输入医学主题，例如「高血压的预防与治疗」、「糖尿病饮食指南」、「胃镜检查注意事项」等。
 
 ![示例1](./images/example-1.png)
 
-#### 然后等待10-20秒后，就会有每一页的大纲，大家可以根据的自己的需求去调整页面顺序（不建议），自定义每一个页面的内容（这个很建议）
+**第二步：AI 生成大纲**
+
+等待 10-20 秒，AI 会自动生成结构化的内容大纲，包括：
+- 📖 疾病定义/概述
+- 🔬 病因/危险因素
+- 🩺 症状/临床表现
+- 📋 诊断/检查
+- 💊 治疗/管理
+- 🛡️ 预防/建议
+- ✅ 总结/就医提醒
+
+你可以根据需要调整每页内容。
 
 ![示例2](./images/example-2.png)
 
-#### 首先生成的是封面页
+**第三步：生成科普长图**
+
+点击生成后，AI 会并发生成所有页面的配图，风格统一、排版专业。
 
 ![示例3](./images/example-3.png)
-
-#### 然后稍等一会儿后，会生成后面的所有页面（这里是并发生成的所有页面（默认是15个），如果大家的API供应商无法支持高并发的话，记得要去改一下设置）
 
 ![示例4](./images/example-4.png)
 
@@ -64,18 +97,19 @@
 - **语言**: Python 3.11+
 - **框架**: Flask
 - **AI 模型**:
-  - Gemini 3 (文案生成)
-  - 🍌Nano banana Pro (图片生成)
+  - 文本生成：Gemini / GPT-4 / 通用 OpenAI 兼容接口
+  - 图片生成：Gemini / DALL·E / Flux / 通用图片 API
 - **包管理**: uv
 
 ### 前端
 - **框架**: Vue 3 + TypeScript
 - **构建**: Vite
 - **状态管理**: Pinia
+- **设计风格**: 医疗蓝专业配色
 
 ---
 
-## 📦 如何自己部署
+## 📦 快速部署
 
 ### 方式一：Docker 部署（推荐）
 
@@ -89,8 +123,6 @@ docker run -d -p 12398:12398 -v ./history:/app/history -v ./output:/app/output h
 
 **使用 docker-compose（可选）：**
 
-下载 [docker-compose.yml](https://github.com/HisMax/RedInk/blob/main/docker-compose.yml) 后：
-
 ```bash
 docker-compose up -d
 ```
@@ -99,7 +131,6 @@ docker-compose up -d
 - 容器内不包含任何 API Key，需要在 Web 界面配置
 - 使用 `-v ./history:/app/history` 持久化历史记录
 - 使用 `-v ./output:/app/output` 持久化生成的图片
-- 可选：挂载自定义配置文件 `-v ./text_providers.yaml:/app/text_providers.yaml`
 
 ---
 
@@ -111,93 +142,133 @@ docker-compose up -d
 - pnpm
 - uv
 
-### 1. 克隆项目
+**1. 克隆项目**
 ```bash
 git clone https://github.com/HisMax/RedInk.git
 cd RedInk
 ```
 
-### 2. 配置 API 服务
-
-复制配置模板文件：
+**2. 配置 API 服务**
 ```bash
 cp text_providers.yaml.example text_providers.yaml
 cp image_providers.yaml.example image_providers.yaml
 ```
 
-编辑配置文件，填入你的 API Key 和服务配置。也可以启动后在 Web 界面的**设置页面**进行配置。
-
-### 3. 安装后端依赖
+**3. 安装依赖**
 ```bash
+# 后端
 uv sync
-```
 
-### 4. 安装前端依赖
-```bash
+# 前端
 cd frontend
 pnpm install
 ```
 
-### 5. 启动服务
-
-**启动后端:**
+**4. 启动服务**
 ```bash
+# 后端
 uv run python -m backend.app
-```
-访问: http://localhost:12398
+# 访问: http://localhost:12398
 
-**启动前端:**
-```bash
-cd frontend
-pnpm dev
+# 前端（开发模式）
+cd frontend && pnpm dev
+# 访问: http://localhost:5173
 ```
-访问: http://localhost:5173
 
 ---
 
 ## 🎮 使用指南
 
 ### 基础使用
-1. **输入主题**: 在首页输入想要创作的主题,如"如何在家做拿铁"
-2. **生成大纲**: AI 自动生成 6-9 页的内容大纲
-3. **编辑确认**: 可以编辑和调整每一页的描述
-4. **生成图片**: 点击生成,实时查看进度
+
+1. **输入医学主题**: 在首页输入想要科普的主题，如「糖尿病的分型与诊断」
+2. **生成大纲**: AI 自动生成 6-12 页的医学科普大纲
+3. **编辑调整**: 可以编辑和调整每一页的内容描述
+4. **生成图片**: 点击生成，实时查看进度
 5. **下载使用**: 一键下载所有图片
 
+### 推荐主题示例
+
+| 类别 | 示例主题 |
+|------|---------|
+| 🩺 疾病科普 | 高血压防治指南、糖尿病的分型与诊断、冠心病的预防 |
+| 🔬 检查指南 | 胃镜检查注意事项、体检报告解读、CT/MRI 检查须知 |
+| 💊 用药指导 | 抗生素的正确使用、降压药服用注意事项、胰岛素注射方法 |
+| 🥗 健康管理 | 高血压患者饮食指南、糖尿病运动处方、备孕期营养指导 |
+| 🏥 手术须知 | 术前准备事项、术后康复指导、伤口护理方法 |
+
 ### 进阶使用
-- **上传参考图片**: 适合品牌方,保持品牌视觉风格
-- **修改描述词**: 精确控制每一页的内容和构图
-- **重新生成**: 对不满意的页面单独重新生成
+
+- **上传参考图片**: 保持品牌视觉风格一致
+- **修改内容描述**: 精确控制每一页的内容和构图
+- **单页重绘**: 对不满意的页面单独重新生成
 
 ---
 
 ## 🔧 配置说明
-
-### 配置方式
-
-项目支持两种配置方式：
-
-1. **Web 界面配置（推荐）**：启动服务后，在设置页面可视化配置
-2. **YAML 文件配置**：直接编辑配置文件
 
 ### 文本生成配置
 
 配置文件: `text_providers.yaml`
 
 ```yaml
-# 当前激活的服务商
 active_provider: openai
 
 providers:
-  # OpenAI 官方或兼容接口
   openai:
     type: openai_compatible
     api_key: sk-xxxxxxxxxxxxxxxxxxxx
     base_url: https://api.openai.com/v1
     model: gpt-4o
 
-  # Google Gemini（原生接口）
   gemini:
+    type: google_gemini
+    api_key: AIzaxxxxxxxxxxxxxxxxxxxxxxxxx
+    model: gemini-2.0-flash
+```
+
+### 图片生成配置
+
+配置文件: `image_providers.yaml`
+
+```yaml
+active_provider: gemini
+
+providers:
+  gemini:
+    type: google_genai
+    api_key: AIzaxxxxxxxxxxxxxxxxxxxxxxxxx
+    model: gemini-3-pro-image-preview
+    high_concurrency: false
+```
+
+---
+
+## ⚠️ 免责声明
+
+> **重要提示**：本工具生成的所有内容仅供科普学习参考，**不作为医疗诊断、治疗或用药依据**。如有健康问题，请咨询专业医疗机构或医生。
+
+- 生成内容由 AI 自动产出，可能存在不准确之处
+- 请专业人士审核后再用于公开发布
+- 禁止将生成内容用于虚假医疗宣传
+
+---
+
+## 🤝 参与贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+如果这个项目对你有帮助，欢迎给个 Star ⭐
+
+### 未来计划
+
+- [ ] 预设医学主题模板（疾病科普/检查指南/用药说明）
+- [ ] 医学术语「专业版/通俗版」切换
+- [ ] 导出为 PDF、长图拼接
+- [ ] 接入医学知识库 RAG，提升内容准确性
+- [ ] 支持品牌定制（医院 Logo、自定义配色）
+- [x] 历史记录管理
+- [x] 单页重绘功能
     type: google_gemini
     api_key: AIzaxxxxxxxxxxxxxxxxxxxxxxxxx
     model: gemini-2.0-flash
@@ -261,50 +332,37 @@ providers:
 
 ---
 
-## 更新日志
+## 🔄 更新日志
+
+### v2.0.0 - MedInk 医学科普版 (2025-12-03)
+- 🏥 **全新定位**：从小红书图文工具转型为医学科普图文生成器
+- ✨ 医学科普专用 Prompt，支持疾病科普/检查指南/健康管理等场景
+- ✨ 医疗蓝专业配色，清新可信的视觉风格
+- ✨ 新增免责声明组件，确保内容合规
+- ✨ 医学主题示例引导，降低使用门槛
+- 🔧 内容结构优化：定义→病因→症状→诊断→治疗→预防→总结
 
 ### v1.4.0 (2025-11-30)
-- 🏗️ 后端架构重构：拆分单体路由为模块化蓝图（history、images、generation、outline、config）
-- 🏗️ 前端组件重构：提取可复用组件（ImageGalleryModal、OutlineModal、ShowcaseBackground等）
-- ✨ 优化首页设计，移除冗余内容区块
-- ✨ 背景图片预加载和渐入动画，提升加载体验
+- 🏗️ 后端架构重构：拆分单体路由为模块化蓝图
+- 🏗️ 前端组件重构：提取可复用组件
+- ✨ 优化首页设计，背景图片预加载
 - ✨ 历史记录持久化支持（Docker部署）
-- 🔧 修复历史记录预览和大纲查看功能
-- 🔧 优化Modal组件可见性控制
 - 🧪 新增65个后端单元测试
 
 ### v1.3.0 (2025-11-26)
 - ✨ 新增 Docker 支持，一键部署
-- ✨ 发布官方 Docker 镜像到 Docker Hub: `histonemax/redink`
-- 🔧 Flask 自动检测前端构建产物，支持单容器部署
-- 🔧 Docker 镜像内置空白配置模板，保护 API Key 安全
-- 📝 更新 README，添加 Docker 部署说明
+- ✨ 发布官方 Docker 镜像: `histonemax/redink`
 
 ### v1.2.0 (2025-11-26)
-- ✨ 新增版权信息展示，所有页面显示开源协议和项目链接
-- ✨ 优化图片重新生成功能，支持单张图片重绘
-- ✨ 重新生成图片时保持风格一致，传递完整上下文（封面图、大纲、用户输入）
-- ✨ 修复图片缓存问题，重新生成的图片立即刷新显示
-- ✨ 统一文本生成客户端接口，支持 Google Gemini 和 OpenAI 兼容接口自动切换
-- ✨ 新增 Web 界面配置功能，可视化管理 API 服务商
-- ✨ 新增高并发模式开关，适配不同 API 配额
-- ✨ API Key 脱敏显示，保护密钥安全
-- ✨ 配置自动保存，修改即时生效
-- 🔧 调整默认 max_output_tokens 为 8000，兼容更多模型限制
-- 🔧 优化前端路由和页面布局，提升用户体验
-- 🔧 简化配置文件结构，移除冗余参数
-- 🔧 优化历史记录图片显示，使用缩略图节省带宽
-- 🔧 历史记录重新生成时自动从文件系统加载封面图作为参考
-- 🐛 修复 `store.updateImage` 方法缺失导致的重新生成失败问题
-- 🐛 修复历史记录加载时图片 URL 拼接错误
-- 🐛 修复下载功能中原图参数处理问题
-- 🐛 修复图片加载 500 错误问题
+- ✨ 新增 Web 界面配置功能
+- ✨ 图片重新生成功能，支持单张重绘
+- ✨ 高并发模式开关
 
 ---
 
-## 交流讨论与赞助
+## 📞 交流与支持
 
-- **GitHub Issues**: [https://github.com/HisMax/RedInk/issues](https://github.com/HisMax/RedInk/issues)
+- **GitHub Issues**: [提交问题或建议](https://github.com/HisMax/RedInk/issues)
 
 ### 联系作者
 
@@ -312,11 +370,15 @@ providers:
 - **微信**: Histone2024（添加请注明来意）
 - **GitHub**: [@HisMax](https://github.com/HisMax)
 
-### 用爱发电，如果可以，请默子喝一杯☕️咖啡吧
+### 用爱发电 ☕
+
+如果这个项目对你有帮助，请作者喝一杯咖啡吧！
 
 <img src="images/coffee.jpg" alt="赞赏码" width="300"/>
 
-## Star History
+---
+
+## ⭐ Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=HisMax/RedInk&type=Date)](https://star-history.com/#HisMax/RedInk&Date)
 
@@ -324,47 +386,27 @@ providers:
 
 ## 📄 开源协议
 
-### 个人使用 - CC BY-NC-SA 4.0
+本项目采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议
 
-本项目采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议进行开源
+**你可以：**
+- ✅ 个人使用 - 用于学习、研究、个人项目
+- ✅ 分享 - 在任何媒介以任何形式复制、发行
+- ✅ 修改 - 修改、转换或以本作品为基础进行创作
 
-**你可以自由地：**
-- ✅ **个人使用** - 用于学习、研究、个人项目
-- ✅ **分享** - 在任何媒介以任何形式复制、发行本作品
-- ✅ **修改** - 修改、转换或以本作品为基础进行创作
+**但需要：**
+- 📝 署名 - 给出适当的署名
+- 🚫 非商业性使用 - 不得用于商业目的
+- 🔄 相同方式共享 - 以相同协议分发衍生作品
 
-**但需要遵守以下条款：**
-- 📝 **署名** - 必须给出适当的署名，提供指向本协议的链接，同时标明是否对原始作品作了修改
-- 🚫 **非商业性使用** - 不得将本作品用于商业目的
-- 🔄 **相同方式共享** - 如果你修改、转换或以本作品为基础进行创作，你必须以相同的协议分发你的作品
-
-### 商业授权
-
-如果你希望将本项目用于**商业目的**（包括但不限于）：
-- 提供付费服务
-- 集成到商业产品
-- 作为 SaaS 服务运营
-- 其他盈利性用途
-
-**请联系作者获取商业授权：**
-- 📧 Email: histonemax@gmail.com
-- 💬 微信: Histone2024（请注明"商业授权咨询"）
-
-默子会根据你的具体使用场景提供灵活的商业授权方案。
-
----
-
-### 免责声明
-
-本软件按"原样"提供，不提供任何形式的明示或暗示担保，包括但不限于适销性、特定用途的适用性和非侵权性的担保。在任何情况下，作者或版权持有人均不对任何索赔、损害或其他责任负责。
+**商业授权**：如需商业使用，请联系 histonemax@gmail.com
 
 ---
 
 ## 🙏 致谢
 
-- [Google Gemini](https://ai.google.dev/) - 强大的文案生成能力
-- 图片生成服务提供商 - 惊艳的图片生成效果
-- [Linux.do](https://linux.do/) - 优秀的开发者社区
+- [Google Gemini](https://ai.google.dev/) - 强大的 AI 能力
+- [OpenAI](https://openai.com/) - 优秀的语言模型
+- 原项目 [RedInk](https://github.com/HisMax/RedInk) - 默子的开源贡献
 
 ---
 
@@ -372,17 +414,12 @@ providers:
 
 **默子 (Histone)** - AI 创业者 | Python & 深度学习
 
-- 🏠 位置: 中国杭州
-- 🚀 状态: 创业中
-- 💡 专注: Transformers、GANs、多模态AI
 - 📧 Email: histonemax@gmail.com
 - 💬 微信: Histone2024
 - 🐙 GitHub: [@HisMax](https://github.com/HisMax)
 
-*"让 AI 帮我们做更有创造力的事"*
+*"让 AI 帮助医学知识更好地传播"*
 
 ---
 
-**如果这个项目帮到了你,欢迎分享给更多人!** ⭐
-
-有任何问题或建议,欢迎提 Issue 或者在 Linux.do 原帖讨论!
+**如果这个项目帮到了你，欢迎 Star ⭐ 和分享给更多人！**
